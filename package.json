@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "git:commit": "git-cz",
     "npm:version:major": "npm version major --no-git-tag-version",
     "npm:version:minor": "npm version minor --no-git-tag-version",
     "npm:version:patch": "npm version patch --no-git-tag-version"
@@ -19,8 +20,17 @@
   "author": "Iman Vafadarnezhad",
   "license": "MIT",
   "private": false,
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "bugs": {
     "url": "https://github.com/rapidevelop/xml2json/issues"
   },
-  "homepage": "https://github.com/rapidevelop/xml2json#readme"
+  "homepage": "https://github.com/rapidevelop/xml2json#readme",
+  "devDependencies": {
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0"
+  }
 }
