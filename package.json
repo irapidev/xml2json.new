@@ -10,7 +10,12 @@
     "git:commit": "git-cz",
     "npm:version:major": "npm version major --no-git-tag-version",
     "npm:version:minor": "npm version minor --no-git-tag-version",
-    "npm:version:patch": "npm version patch --no-git-tag-version"
+    "npm:version:patch": "npm version patch --no-git-tag-version",
+    "test:types": "tsc --noEmit",
+    "test:types:watch": "npm run test:types -- --watch",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "build": "npm run build:types && npm run build:js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +35,15 @@
   },
   "homepage": "https://github.com/rapidevelop/xml2json#readme",
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/node": "^12.0.0",
     "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "^2.1.0"
+    "cz-conventional-changelog": "^2.1.0",
+    "typescript": "^3.4.5"
   }
 }
